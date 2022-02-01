@@ -1,0 +1,66 @@
+button {
+    cursor: pointer;
+    max-width: 250px;
+    text-align: center;
+    display: block;
+    border-style: none;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    background-color: #2196f3;
+    border-radius: 2px;
+    font-weight: bold;
+    font-size: 14px;
+
+    -webkit-transition: background-color 200ms ease-out 50ms;
+    -moz-transition: background-color 200ms ease-out 50ms;
+    -o-transition: background-color 200ms ease-out 50ms;
+    -ms-transition: background-color 200ms ease-out 50ms;
+    transition: background-color 200ms ease-out 50ms;
+}
+
+button:hover {
+    /* background: #008CBA; */
+    /* color: rgba(255, 255, 255, 0.94); */
+    color: rgba(0, 0, 0, 0.87);
+}
+
+button.flat{
+    background-color: rgba(0, 0, 0, 0);
+    color: #2196f3;
+    -webkit-transition: color 200ms ease-out 50ms, background-color 100ms ease-out;
+    -moz-transition: color 200ms ease-out 50ms, background-color 100ms ease-out;
+    -o-transition: color 200ms ease-out 50ms, background-color 100ms ease-out;
+    -ms-transition: color 200ms ease-out 50ms, background-color 100ms ease-out;;
+    transition: color 200ms ease-out 50ms, background-color 100ms ease-out;;
+}
+
+button.flat:disabled {
+    cursor: not-allowed;
+    color: rgba(0, 0, 0, 0.25);
+    -webkit-transition: none !important;
+    -moz-transition: none !important;
+    -o-transition: none !important;
+    -ms-transition: none !important;
+    transition: none !important;
+}
+
+button.flat:disabled:hover {
+    color: rgba(0, 0, 0, 0.25);
+    -webkit-transition: none !important;
+    -moz-transition: none !important;
+    -o-transition: none !important;
+    -ms-transition: none !important;
+    transition: none !important;
+}
+
+button.flat:hover {
+    /* background: #008CBA; */
+    /* color: rgba(255, 255, 255, 0.94); */
+    color: rgba(0, 0, 0, 0.87);
+}
+
+button.flat:active {
+    background: #C2EFFF;
+    /* color: rgba(255, 255, 255, 0.94); */
+    color: rgba(0, 0, 0, 0.87);
+}

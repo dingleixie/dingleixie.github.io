@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Unit State Editor</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="stylesheet" href="resources/css/button.css" />
+  <link rel="stylesheet" href="resources/css/theme.css" />
+
+</head>
+
+<body id='mainbody'
+    ondragover="window.app.view.allowDrop(event)"
+    ondrop="window.app.view.doDrop(event)"
+    ondragleave="window.app.view.dragLost(event)">
+
+
+  <header id="header-bar" class="thickpadding shadow-deep">
+    <div class="header-bar-content">
+      <div class="state-box">
+        <img id="logo" src="resources/img/Logo.png">
+          <div id="navbar">
+            <span class="navheader tooltip">Navigation
+              <span class="tooltiptext">Click to toggle navigation bar</span>
+            </span>
+            <div id="navbarcontents" class="shadow-deep collapsed">
+          </div>
+        </div>
+      </div>
+      <div class="state-box">
+        <h2 class="text-vert-align" id="unit-type" >State Editor</h2>
+        <span id ="version">v</span>
+        <div id="protection-container">
+          <input type="password" id="passwordEntry">
+          <!-- <button id="protectionUnlock" onclick="Page.lockClick()">Unlock</button> -->
+          <button id="protectionUnlock">Unlock</button>
+        </div>
+        <span>Checksum State: </span><span id="checksum-state">unknown</span>
+      </div>
+      <div id="port-box" class="inline" style = "border-right: dashed; border-color: lightblue; padding-right: 5px">
+        <div>
+          <input type="file" accept=".txt" class="collapsed" id="ampStateInput" >
+          <button id="ampStateInputButton" >Import File</button>
+          <span  id="filename">fileName.txt</span>
+        </div>
+        <button class="stacked control-panel" id="ampStateExport">Save State File</button>
+        <button class="stacked control-panel" id ="maskFile">Json File</button>
+        <!-- <button class="stacked control-panel" id = "expandAndCollapse"> Expand All</button> -->
+      </div>
+      <div id="button" class="inline">
+        <input type = "checkbox" id="expandAndCollapse" autocomplete ='off' checked>
+        <label for="expandAndCollapse"> Expand All</label><br>
+        <input type = "checkbox" id="toggleVisibility" autocomplete ='off' checked>
+        <label for ="toggleVisibility"> Show Uneditable Items</label><br>
+        <input type = "checkbox" id="nonRelevantProp" autocomplete ='off' checked >
+        <!-- <label for = "nonRelevantProp" > Display Irrelevant Properties</label><br> -->
+        <div>
+          <input type="checkbox" id="modelGenerator" autocomplete ='off'>
+          <label for="modelGenerator">Model Config Items</label>
+          <select id="generator-type-selector">
+            <option value="O2 Status">O2(ODU)</option>
+            <option value="T2 Status">T2(Rack)</option>
+            <option value="Ogtr Stat">Ogater</option>
+          </select>
+        </div>
+      </div>
+ 
+    </div>
+  </header>
+
+  <section id="page-content" >
+    <div id="splash" class="shadow">
+        <h1>Instructions</h1>
+        <div class="extra-thick-padding">
+          <p class="heading">State Editor</p>
+          <ul class="sneaky">
+            <li>Drag and drop a state file anywhere onto this page</li>
+            <li>... or click on <b>Import File</b></li>
+          </ul>
+          <p class="heading">Model Config Generator</p>
+          <ol class="sneaky">
+            <li> Select the type of model config to generate from the dropdown</li>
+            <li> Check the <b>Model Config Items</b> to show the items</li>
+          </ol>
+        </div>
+      </p>
+    </div>
+  </section>
+
+  <script>
+
+    document.getElementById("nonRelevantProp").style.display = "none";
+  </script>
+</body>
+<footer>
+  <link rel="stylesheet" href="resources/css/alertify.css" id="alertifyCSS"/>
+  <script src="resources/js/alertify.js"></script>
+  <!-- <script type="text/javascript" src="resources/js/all.js"></script> -->
+  <script type="text/javascript" src="resources/js/shortcut.js"></script>
+  <script type="text/javascript" src="resources/js/iepolyfill.js"></script>
+  <script type="text/javascript" src="resources/js/domprototypes.js"></script>
+  <script type="text/javascript" src="resources/js/observable.js"></script>
+  <script type="text/javascript" src="resources/js/types.js"></script>
+  <script type="text/javascript" src="resources/js/statestructure.js"></script>
+  <script type="text/javascript" src="resources/js/appstate.js"></script>
+  <script type="text/javascript" src="resources/js/parser.js"></script>
+  <script type="text/javascript" src="resources/js/util.js"></script>
+  <script type="text/javascript" src="resources/js/verification.js"></script>
+  <script type="text/javascript" src="resources/js/generate_t2.js"></script>
+  <script type="text/javascript" src="resources/js/generate_o2.js"></script>
+  <script type="text/javascript" src="resources/js/model.js"></script>
+  <script type="text/javascript" src="resources/js/view.js"></script>
+  <script type="text/javascript" src="resources/js/controller.js"></script>
+  <script type="text/javascript" src="resources/js/app.js"></script>
+</footer>
+</html>
